@@ -164,3 +164,33 @@ body {
     left: 110px;
     scale: 0.6;
 }
+
+
+#modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#closemodal {
+    color: rgb(63, 63, 63);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    margin-top: 24px;
+}
+
+#closemodal:hover {
+    color: white;
+}
+
+#pool-name {
+    font-size: 64px;
+}

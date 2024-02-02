@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <!-- <div id="modal">
+    <div id="modal">
         <div id="modal-content">
             <h1>New Pool</h1>
-            <div id="pool-name">{PoolName}</div>
+            <div id="pool-name">{{ data.pool.poolName }}</div>
+            <div id="closemodal">Continue -&gt;</div>
         </div>
-    </div> -->
+    </div>
     <div id="logo">
         <img src="../static/logo.png" alt="">
     </div>
@@ -56,9 +57,21 @@
     </div>
     <a href="/getPlayer/{{ (data.player.id | int) + 1 }}" id="nextbutton">Next -&gt;</a>
     <script>
-        const data = "{{ data }}"
+        let showModal = "{{ data.pool.isNewPool }}"
+        showModal = showModal === "True" ? true : false
 
-        console.log(JSON.parse(data))
+        document.addEventListener("DOMContentLoaded", (e) => {
+            if (showModal) {
+                document.getElementById("modal").style.display = "flex"
+            }
+        })
+
+
+        document.getElementById("closemodal").addEventListener("click", () => {
+            document.getElementById("modal").style.display = "none"
+        })
+
+
 
     </script>
 </body>
