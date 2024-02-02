@@ -4,7 +4,7 @@ import numpy as np
 
 #%%
 
-pool_title_map = {
+pool_name_map = {
     1: "MARQUEE SET",
     2: "BATSMEN 1",
     3: "ALL ROUNDERS 1",
@@ -19,6 +19,23 @@ pool_title_map = {
     12: "ALL ROUNDERS 3",
     13: "BATSMEN 3",
     14: "ALL ROUNDERS 4"
+}
+
+pool_code_map = {
+    1: "MS",
+    2: "BA1",
+    3: "AR1",
+    4: "WK1",
+    5: "FB1",
+    6: "SB1",
+    7: "BA2",
+    8: "WK2",
+    9: "AR2",
+    10: "FB2",
+    11: "SB2",
+    12: "AR3",
+    13: "BA3",
+    14: "AR4"
 }
 
 #%%
@@ -63,7 +80,12 @@ def get_player_by_serial(playerId):
         
         output = {
             'player': player_dict,
-            'newPool': newPool}
+            'pool': {
+                'poolName': pool_name_map[currPlayerSet]
+                'poolCode': pool_code_map[currPlayerSet],
+                'isNewPool': newPool
+                }
+            }
         
         return jsonify(output)
     else:
