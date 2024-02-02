@@ -24,7 +24,7 @@ pool_title_map = {
 #%%
 
 # Data ingestion
-data = pd.read_excel("PlayersList2024_preprocessed.xlsx")
+data = pd.read_excel("data/PlayersList2024_preprocessed.xlsx")
 data = data.replace({np.nan: None})
 
 data.columns= ['id', 'setNo', 'name', 'country', 'basePrice', 'age', 'numMatches', 'numRuns', 'battingAvg', 'strikeRate', 'numWickets', 'bowlingAvg', 'bowlingEconomy']
