@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   font-family: 'Inter', 'Roboto', sans-serif;
@@ -9,188 +10,188 @@ body, html {
 }
 
 div {
-    border-radius: 4px;
+  border-radius: 4px;
 }
 
 body {
-    background: url("../static/gradient.png");
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-size: cover;
-    color: white;
-    font-weight: bold;
+  background: url("/static/gradient.png");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  color: white;
+  font-weight: bold;
 }
 
 .container {
-    padding: 0px 150px;
-    min-height: 100vh;
-    position: relative;
-    display: flex;
+  padding: 0px 150px;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
 }
 
 .image__container {
-    height: 50vh;
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-right: 16px;
-    margin-top: auto;
-    margin-bottom: 70px;
-    position: relative;
+  height: 50vh;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-right: 16px;
+  margin-top: auto;
+  margin-bottom: 70px;
+  position: relative;
 }
 
-.image__container > img {
-    width: 100%;
-    height: 160%;
-    object-fit: cover;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.image__container>img {
+  width: 100%;
+  height: 160%;
+  object-fit: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .stats__container {
-    height: 75vh;
-    margin-top: auto;
-    margin-bottom: 70px;
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 32px;
+  height: 75vh;
+  margin-top: auto;
+  margin-bottom: 70px;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 32px;
 }
 
 .baseprice__container {
-    display: flex;
-    width: 100%;
-    margin-bottom: 24px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 24px;
 }
 
-.baseprice  {
-    width: 60%;
-    background-color: #4DAFFF;
-    padding: 28px 0px;
-    font-size: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.baseprice {
+  width: 60%;
+  background-color: #4DAFFF;
+  padding: 28px 0px;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #baseprice {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0064B6;
-    padding: 28px 0px;
-    width: 40%;
-    margin-left: 16px;
-    font-size: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0064B6;
+  padding: 28px 0px;
+  width: 40%;
+  margin-left: 16px;
+  font-size: 42px;
 }
 
 
 
 #name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0064B6;
-    padding: 18px 0px;
-    width: 100%;
-    font-size: 36px;
-    margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0064B6;
+  padding: 18px 0px;
+  width: 100%;
+  font-size: 36px;
+  margin-bottom: 24px;
 }
 
 #demographic__container {
-    display: flex;
-    width: 100%;
-    margin-bottom: 24px;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  margin-bottom: 24px;
+  justify-content: space-between;
 }
 
-#demographic__container > * {
-    font-size: 24px;
+#demographic__container>* {
+  font-size: 24px;
 }
 
 #country {
-    width: fit-content;
+  width: fit-content;
 }
 
 #poolname {
-    width: fit-content;
+  width: fit-content;
 }
 
 .age {
-    width: fit-content;
+  width: fit-content;
 }
 
 .stats__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0064B6;
-    padding: 18px 32px;
-    font-size:  20px;
-    margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0064B6;
+  padding: 18px 32px;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
 .stats__stats {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4DAFFF;
-    padding: 20px 32px;
-    font-size: 24px;    
-    margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4DAFFF;
+  padding: 20px 32px;
+  font-size: 24px;
+  margin-bottom: 24px;
 }
 
 .stats__stats * {
-    text-align: center;
+  text-align: center;
 }
 
 #nextbutton {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    color: rgb(66, 25, 202);
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: rgb(66, 25, 202);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
 }
 
 #nextbutton:hover {
-    color: white
+  color: white
 }
 
 #logo {
-    position: absolute;
-    top: 0px;
-    left: 110px;
-    scale: 0.6;
+  position: absolute;
+  top: 0px;
+  left: 110px;
+  scale: 0.6;
 }
 
 
 #modal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 }
 
 #closemodal {
-    color: rgb(63, 63, 63);
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
-    margin-top: 24px;
+  color: rgb(63, 63, 63);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  margin-top: 24px;
 }
 
 #closemodal:hover {
-    color: white;
+  color: white;
 }
 
 #pool-name {
-    font-size: 64px;
+  font-size: 64px;
 }
