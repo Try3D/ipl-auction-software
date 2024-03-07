@@ -57,10 +57,10 @@ nav {
 }
 
 .parent-container {
-  margin-left: 5vw;
-  margin-right: 5vw;
+  margin-left: 2.2vw;
+  margin-right: 2.2vw;
   position: relative;
-  width: 90vw;
+  width: 95.6vw;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -133,8 +133,8 @@ nav {
 }
 
 .next {
-  margin-left: 640px;
-  margin-top: 100px;
+  margin-left: 645px;
+  margin-top: 81px;
   transition: transform 0.3s, filter 0.3s;
 }
 
