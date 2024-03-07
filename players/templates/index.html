@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The SNUC IPL Auction</title>
+  <link href="/static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="modal">
+      <div id="modal-content">
+        <h1 style="font-size: 30px;">New Pool</h1>
+        <!--- POOL NAME -->
+        <div id="pool-name">{{ pool.poolCode }} - {{ pool.poolName }}</div>
+        <div id="closemodal">Continue -&gt;</div>
+      </div>
+    </div>
+
+    <nav>
+      <img src="/static/header.png" height=280>
+    </nav>
+
+    <div class="parent-container">
+      <div class="flex-item" style="margin-top: 20px;">
+
+        <div class="pinfo">
+          <div class="overlay-container">
+            <img src="/static/border.png" alt="overlay image" width=350>
+            <div class="hexagon-container">
+              <!--- IMAGE comes here -->
+              <img src="{{player.img.url}}">
+            </div>
+          </div>
+
+          <div style="position: relative;">
+            <img src="/static/sidestuff.svg" width=550 style="position: relative; transform: translate(-10%, -4%); z-index: -1;">
+            <div
+              style="text-align: left; position: absolute; top: 50%; left: 50%; transform: translate(-56%, -57%); color: white; font-size: 34px; width: 470px;">
+              <div>
+                <!--- NAME comes here -->
+                {{ name }}
+              </div>
+              <div class="age">
+                <!-- age: comes here -->
+                AGE: {{ player.age }}
+              </div>
+              <div class="country">
+                <!-- country comes here -->
+                {{ country }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position: relative;">
+          <img src="/static/set.svg" width=880>
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 44px; width: 100%;">
+            <!--- SET CODE and SET goes here-->
+            {{ pool.poolCode }} - {{ pool.poolName }}
+          </div>
+        </div>
+
+        <div class="price">
+          <div style="position: relative;">
+            <img src="/static/price.svg" height=120>
+            <div
+              style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 44px; width: 100%;">
+              <!--- PRICE goes here -->
+              ₹ {{ player.basePrice }} L
+            </div>
+          </div>
+
+          <div style="position: relative;">
+            <img src="/static/bp.svg" height=120>
+            <div
+              style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 48px; width: 100%">
+              BASE PRICE
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-item" style="margin-top: -3px;">
+        <div>
+          <img src="/static/top.png" width=840>
+        </div>
+
+        <div style="position: relative">
+          <img src="/static/db-right.svg" width=840>
+          <div
+            style="position: absolute; top: 50%; left: 11.5%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 48px; width: 100%">
+            IPL
+          </div>
+          <div
+            style="position: absolute; top: 50%; left: 35%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 48px; width: 100%">
+            <!-- MATCHES Count -->
+            {% if player.numMatches %}
+              <div>{{ player.numMatches }}</div>
+            {% else %}
+              <div>-</div>
+            {% endif %}
+          </div>
+          <div
+            style="position: absolute; top: 50%; left: 65%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 48px; width: 100%">
+            <!-- RUNS Count -->
+            4400
+          </div>
+          <div
+            style="position: absolute; top: 50%; left: 90%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 48px; width: 100%">
+            <!-- WICKETS Count -->
+            -
+          </div>
+        </div>
+
+        <div>
+          <img src="/static/below.png" width=840>
+        </div>
+
+        <div style="position: relative;">
+          <img src="/static/db-right.svg" width=840>
+          <div
+            style="position: absolute; top: 50%; left: 19.5%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 48px; width: 100%">
+            <!--- BAT. Avg -->
+            {% if player.battingAvg %}
+              <div>{{ player.battingAvg }}</div>
+              {% else %}
+              <div>-</div>
+            {% endif %}
+          </div>
+
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 48px; width: 100%">
+            <!--- BOW. Avg -->
+              {% if player.bowlingAvg %}
+                <div>{{ player.bowlingAvg }}</div>
+                {% else %}
+                <div>-</div>
+              {% endif %}
+          </div>
+
+          <div
+            style="position: absolute; top: 50%; left: 80%; transform: translate(-50%, -50%); text-align: center; color: white; font-size: 48px; width: 100%">
+            <!--- S/R -->
+            123.4
+          </div>
+        </div>
+
+        <div style="position: relative; margin-top: 40px;">
+          {% if team.no_team %}
+          <div id="rtm-container">
+            <img src="/static/noteam.svg" id="rtmimg" width=860>
+
+            <div
+              id="name" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #f0fbffff; font-size: 44px; width: 100%;">
+              <!--- TEAM goes here -->
+              RTM: {{ team.name }}
+            </div>
+          </div>
+          {% elif team.no_rtm %}
+          <div id="rtm-container">
+            <img src="/static/nortm.svg" id="rtmimg" width=860>
+
+            <div
+              id="name" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #545454; font-size: 40px; width: 100%;">
+              RTM: {{ team.name }}
+            </div>
+          </div>
+          {% else %}
+          <div id="rtm-container" style="cursor: pointer;">
+            <img src="/static/rtm.svg" id="rtmimg" width=860>
+
+            <div
+              id="name" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #ddd; font-size: 40px; width: 100%;">
+              RTM: {{ team.name }}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="next">
+          <a href="{% url 'get_player' id|add:'1' %}">
+            <img src="/static/next.png" width=200>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let showModal = "{{ pool.isNewPool }}";
+      showModal = showModal === "True" ? true : false;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (showModal) {
+          document.getElementById("modal").style.display = "flex";
+        }
+      });
+
+      document.getElementById("closemodal").addEventListener("click", () => {
+        document.getElementById("modal").style.display = "none";
+      });
+
+      {% if team.allowed %}
+
+      const rtmContainer = document.getElementById('rtm-container');
+      const name = document.getElementById('name');
+      const img = document.getElementById('rtmimg');
+
+      function handleClick() {
+        fetch('/player_rtm?team_code={{ team.code }}')
+          .then((res) => res.json())
+          .then((data) => {
+            const count = 3 - data.count;
+            const text = "RTM CONFIRMED!";
+
+            img.src = "/static/confirmed.svg";
+            name.innerText = text;
+            name.color = '#ddd';
+            rtmContainer.style.cursor = "auto";
+
+            rtmContainer.removeEventListener('click', handleClick);
+          })
+      }
+
+      rtmContainer.addEventListener('click', handleClick);
+
+      {% endif %}
+    </script>
+
+</body>
+
+</html>
